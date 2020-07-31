@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <%- include('./partials/head') -%>
+</head>
+<body>
+    <header>
+        <%- include('./partials/header') -%>
+        </header>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Picture</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(e => { %>
+            <tr>
+                <td><%= e.name %></td>
+                <td><%= e.age %></td>
+                <td><img src="../img/<%= e.id %>_myFace.jpg"></td>
+                <td>
+                    <a href="/students/<%= e.id %>/picture"><button>Change this picture!</button></a>
+                    <a href="/students/<%= e.id %>/projects"><button>Add Projects</button></a>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

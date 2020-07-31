@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('./partials/head') -%>
+    </head>
+    <body>
+    <header>
+        <%- include('./partials/header') -%>
+    </header>
+    <div class="page-title">
+        <h1>Welcome to Our Project:</h1><br>
+        <h1>Students and Projects (Face Included)</h1>
+
+        <h1>login page:</h1>
+        <form action="/students" method="post">
+            <label>input your name</label>
+            <input type="text" name="name" placeholder="eg. john doe">
+            <button type="submit">login</button>
+        </form>
+    </div>
+    </body>
+    <%- include('./partials/footer') -%>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') -%>
+</head>
+<body>
+    <header>
+    <%- include('./partials/header') -%>
+    </header>
+    <h1><%= data.name %></h1>
+    <table border="2">
+        <thead>
+            <tr>
+                <td>Project</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+        <% data.Projects.forEach(e => { %>
+            <tr>
+                <td><%= e.name %></td>
+                <td><%= e.difficulty %></td>
+            </tr>
+        <% }) %>
+        </tbody>
+    </table>
+    <button><a href="/students/<%= data.id %>/projects/add">Add New</a></button>
+</body>
+<%- include('./partials/footer') -%>
+</html>

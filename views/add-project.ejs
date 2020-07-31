@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Project Form</title>
+</head>
+<body>
+    <h1>Student: <%= studentData.name %></h1><br><br>
+    <h1>Add Project:</h1><br>
+    <form action="/students/<%= studentData.id %>/projects/add" method="post">
+        <label>Choose a Project</label><br>
+        <select name="ProjectId" id="">
+            <option disabled selected>-- Select Project --</option>
+        <% projectData.forEach(e => { %>
+            <option value="<%= e.id %>"><%= e.name %></option>
+        <% }) %>
+        </select><br>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
